@@ -5,13 +5,19 @@
 // va applicato uno sconto del 40% per gli over 65
 
 
-var distanza = parseInt(prompt('inserisci distanza che vuoi percorrere in km'));
-var costo = distanza * (0.21);
-var eta = parseInt(prompt('inserisci la tua età'));
-if (eta<18) {
-    costo = (distanza * 0.21)*0.8;
 
-}else if (eta>65) {
-    costo = (distanza * 0.21)*0.6;
+function miaFunzione(distanza,eta,costo) {
+    var distanza = document.getElementById('distanza').value;
+    var eta = document.getElementById('age').value;
+    var costo;
+
+    if (eta<18) {
+        costo = (distanza * 0.21)*0.8;
+
+    }else if (eta>65) {
+        costo = (distanza * 0.21)*0.6;
+    } else {
+        costo = distanza * 0.21;
+    }
+    document.getElementById('costo').innerHTML = 'costo del biglietto:' + costo + '€';
 }
-document.getElementById('costo').innerHTML = costo;

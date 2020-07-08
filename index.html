@@ -7,8 +7,16 @@
         <title>Biglietto del treno</title>
     </head>
     <body>
-        <div id="costo"></div>
-        <div id="sconto"></div>
+
+            <form action="/action_page.php">
+              <label for="fname">Inserisci distanza che vuoi percorrere in km:</label><br>
+              <input type="text" id="distanza" name="fname" value=""><br>
+              <label for="lname">Inserisci la tua età:</label><br>
+              <input type="text" id="age" name="lname" value=""><br><br>
+             <button type="submit" name="button" onclick="miaFunzione()">Invia</button>
+            </form>
+
+        <p id="costo"></p>
         <script src="js\script.js"></script>
     </body>
 </html>
