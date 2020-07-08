@@ -9,15 +9,13 @@
 function miaFunzione(distanza,eta,costo) {
     var distanza = document.getElementById('distanza').value;
     var eta = document.getElementById('age').value;
-    var costo;
-
+    var costoKm = 0.21;
+    var costo = distanza * costoKm;
     if (eta<18) {
-        costo = (distanza * 0.21)*0.8;
+        costo *= 0.8;
 
     }else if (eta>65) {
-        costo = (distanza * 0.21)*0.6;
-    } else {
-        costo = distanza * 0.21;
+        costo *= 0.6;
     }
-    document.getElementById('costo').innerHTML = 'costo del biglietto:' + costo + '€';
+    document.getElementById('costo').innerHTML = 'costo del biglietto:' + costo.toPrecision(3) + '€';
 }
